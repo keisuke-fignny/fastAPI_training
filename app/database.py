@@ -1,18 +1,9 @@
-from typing import AsyncGenerator
+from .settings import settings           # ①で作った設定クラス
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 
-from sqlalchemy.ext.asyncio import (
-    AsyncSession, async_sessionmaker, create_async_engine,
-)
-
-DATABASE_URL = "postgresql+asyncpg://ユーザ名:パスワード@localhost:5432/データベース名"
-
-engine = create_async_engine(
-    DATABASE_URL,
-    echo=True,            # SQL ログを出すなら True
-    pool_pre_ping=True   # 死活監視で接続切れを検知
-)
+engine = create_async_engine(settings.database_url, echo=False, pool_pre_ping=True)
 SessionLocal = async_sessionmaker(bind=engine, expire_on_commit=False)
 
-async def get_session() -> AsyncGenerator[AsyncSession, None]:
+async def get_session():
     async with SessionLocal() as session:
         yield session

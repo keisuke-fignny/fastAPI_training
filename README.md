@@ -6,15 +6,15 @@
 
 # 2.依存パッケージのインストール    
 ```
-pip install "fastapi[all]" sqlalchemy[asyncio] asyncpg
+pip install "fastapi[all]" sqlalchemy[asyncio] asyncpg pydantic-settings
 ```
 
 # 3.ソースコード模写
     appディレクトリ内のソースコードを、内容を読みながら模写しましょう。
 
-# 4.DB接続情報の更新
-    database.pyを確認してください。DBへの接続情報がありますが、ここは自分の接続情報に書き換える必要があります。
-
+# 4. .envの作成
+    DBの接続情報は、Gitにあげるべきではなく秘匿すべき情報です。こういった環境に依存する秘匿情報を.envというファイルに作成し、自分のローカルだけで保持するルールがあります。 プロジェクトディレクトリの直下に.envファイルを作成し、DB接続情報を以下のように作成しなさい。
+    DATABASE_URL="postgresql+asyncpg://ユーザ名:パスワード@localhost:5432/データベース名"
 
 # 5. DBの作成、sampleデータのインサート
     docディレクトリに、テーブル作成のDDLと、サンプルデータ登録用のsqlがおいてありますので、これを実行して、テーブルを作成しましょう。まずはitemsテーブルだけがあれば動作します。
