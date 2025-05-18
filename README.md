@@ -17,7 +17,5 @@ pip install "fastapi[all]" sqlalchemy[asyncio] asyncpg
 
 # 5. アプリ起動
     以下コマンドでローカルサーバーが起動しますので、試してみましょう。
-    ```
     uvicorn app.main:app --reload
-    ```
     
