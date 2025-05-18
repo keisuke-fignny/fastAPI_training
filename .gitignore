@@ -1,0 +1,103 @@
+# ---------------------------------------------
+#  FastAPI / Python 基本
+# ---------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 仮想環境
+.env/
+.venv/
+env/
+venv/
+ENV/
+
+# ビルド / 配布物
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+wheelhouse/
+
+# Cython / 拡張ビルド成果物
+*.pyd
+*.so
+*.dylib
+
+# ---------------------------------------------
+#  テスト & 静的解析
+# ---------------------------------------------
+.pytest_cache/
+pytest_cache/
+.tox/
+.nox/
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.dmypy.json
+.pyre/
+
+# ---------------------------------------------
+#  FastAPI / Starlette 固有
+# ---------------------------------------------
+logs/
+*.log
+instance/          # app.instance_path を使う場合
+*.sqlite3          # SQLite をローカル開発で使う場合
+app.db             # 上記以外の DB ファイル名
+
+# Uvicorn リロード用
+.reload/
+
+# ---------------------------------------------
+#  環境変数・機密情報
+# ---------------------------------------------
+.env
+.env.*             # .env.development, .env.production など
+
+# ---------------------------------------------
+#  コンテナ & IaC
+# ---------------------------------------------
+# Docker
+*.stackdump
+docker-compose.override.yml
+
+# Terraform / Pulumi などを使う場合
+*.tfstate
+*.tfstate.*
+
+# ---------------------------------------------
+#  エディタ / IDE
+# ---------------------------------------------
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains 系（PyCharm など）
+.idea/
+
+# その他エディタ
+*.swp
+*.swo
+
+# ---------------------------------------------
+#  フロントエンド（必要な場合のみ）
+# ---------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+
+# ---------------------------------------------
+#  OS 由来
+# ---------------------------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
